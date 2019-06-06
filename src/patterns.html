@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<script>		
+		var cube_faces =
+			[
+				"CubeResources/1-Circle.png",
+				"CubeResources/2-Circle.png",
+				"CubeResources/3-Square.png",
+				"CubeResources/4-Square.png",
+				"CubeResources/5-Diagonal.png",
+				"CubeResources/6-Diagonal.png",
+				"CubeResources/7-Diagonal.png",
+				"CubeResources/8-Diagonal.png"
+			]
+
+		function getRandomCubeFace() {
+			return cube_faces[Math.floor(Math.random() * cube_faces.length)];
+		}
+
+		function clearCanvas(){
+			document.getElementById("cube00").src = cube_faces[2];
+			document.getElementById("cube01").src = cube_faces[2];
+			document.getElementById("cube02").src = cube_faces[2];
+			document.getElementById("cube03").src = cube_faces[2];
+
+			document.getElementById("cube10").src = cube_faces[2]; 
+			document.getElementById("cube11").src = cube_faces[2];
+			document.getElementById("cube12").src = cube_faces[2];
+			document.getElementById("cube13").src = cube_faces[2];
+
+			document.getElementById("cube20").src = cube_faces[2];
+			document.getElementById("cube21").src = cube_faces[2];
+			document.getElementById("cube22").src = cube_faces[2];
+			document.getElementById("cube23").src = cube_faces[2];
+
+			document.getElementById("cube30").src = cube_faces[2];
+			document.getElementById("cube31").src = cube_faces[2];
+			document.getElementById("cube32").src = cube_faces[2];
+			document.getElementById("cube33").src = cube_faces[2];
+		}
+
+		function shuffleCubes() {
+			clearCanvas();
+
+			setTimeout(function() {
+				document.getElementById("cube00").src = getRandomCubeFace();
+				document.getElementById("cube01").src = getRandomCubeFace();
+				document.getElementById("cube02").src = getRandomCubeFace();
+				document.getElementById("cube03").src = getRandomCubeFace();
+
+				document.getElementById("cube10").src = getRandomCubeFace();
+				document.getElementById("cube11").src = getRandomCubeFace();
+				document.getElementById("cube12").src = getRandomCubeFace();
+				document.getElementById("cube13").src = getRandomCubeFace();
+
+				document.getElementById("cube20").src = getRandomCubeFace();
+				document.getElementById("cube21").src = getRandomCubeFace();
+				document.getElementById("cube22").src = getRandomCubeFace();
+				document.getElementById("cube23").src = getRandomCubeFace();
+
+				document.getElementById("cube30").src = getRandomCubeFace();
+				document.getElementById("cube31").src = getRandomCubeFace();
+				document.getElementById("cube32").src = getRandomCubeFace();
+				document.getElementById("cube33").src = getRandomCubeFace();
+			}, (2 * 1000));
+		}
+
+	</script>
+	<title>Q-Bitz Pattern Generator!</title>
+	<style>
+		.cube-row {
+			width: 400px;
+			margin-bottom: -4px;		
+		}
+		.border {
+			width: 400px;
+			border-style: solid;
+			border-width: 20px;
+			border-color: magenta;
+			margin: 20px;
+			border-radius: 8px;
+		}
+
+		.button {
+			display: inline-block;
+			justify-content: center;
+			padding: 15px 25px;
+			font-size: 24px;
+			cursor: pointer;
+			text-align: center;
+			text-decoration: none;
+			outline: none;
+			color: #fff;
+			background-color: mediumseagreen;
+			border: none;
+			border-radius: 8px;
+			box-shadow: 0 9px #999;
+			margin-left: 95px;
+		}
+		.button:hover {
+			background-color: seagreen
+		}
+
+		.button:active {
+			background-color: #3e8e41;
+			box-shadow: 0 5px #666;
+			transform: translateY(4px);
+		}
+
+		.content {
+			max-width: 500px;
+			margin: auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<table>
+			<tr>
+				<td>
+					<div>
+						<div class="border">
+							<div class="cube-row">
+								<img src="CubeResources/1-Circle.png" width="100" height="100" id="cube00" /><img src="CubeResources/1-Circle.png" width="100" height="100" id="cube01" /><img src="CubeResources/1-Circle.png" width="100" height="100" id="cube02" /><img src="CubeResources/1-Circle.png" width="100" height="100" id="cube03">
+							</div>
+							<div class="cube-row">
+								<img src="CubeResources/1-Circle.png" width="100" height="100" id="cube10" /><img src="CubeResources/1-Circle.png" width="100" height="100" id="cube11" /><img src="CubeResources/1-Circle.png" width="100" height="100" id="cube12" /><img src="CubeResources/1-Circle.png" width="100" height="100" id="cube13">
+							</div>
+							<div class="cube-row">
+								<img src="CubeResources/1-Circle.png" width="100" height="100" id="cube20" /><img src="CubeResources/1-Circle.png" width="100" height="100" id="cube21" /><img src="CubeResources/1-Circle.png" width="100" height="100" id="cube22" /><img src="CubeResources/1-Circle.png" width="100" height="100" id="cube23">
+							</div>
+							<div class="cube-row">
+								<img src="CubeResources/1-Circle.png" width="100" height="100" id="cube30" /><img src="CubeResources/1-Circle.png" width="100" height="100" id="cube31" /><img src="CubeResources/1-Circle.png" width="100" height="100" id="cube32" /><img src="CubeResources/1-Circle.png" width="100" height="100" id="cube33">
+							</div>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="shuffleButton" onclick="shuffleCubes()" class="button">Generate New Pattern</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
